@@ -1,0 +1,11 @@
+package onepiece.api1.piratas;
+
+public enum Bando {
+    CHAPEUS_DE_PALHA,
+    PIRATAS_DO_ROGER,
+    PIRATAS_DO_BARBA_BRANCA,
+    PIRATAS_DO_RUIVO,
+    PIRATAS_DAS_FERAS,
+    PIRATAS_DO_BARBA_NEGRA,
+    PIRATAS_DA_BIG_MOM
+}
