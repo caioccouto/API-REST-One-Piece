@@ -28,7 +28,10 @@ public class Pirata {
     @Enumerated(EnumType.STRING)
     private Funcao funcao;
 
+    private boolean ativo;
+
     public Pirata(DadosPiratas dp){
+        this.ativo = true;
         this.nome = dp.nome();
         this.idade = dp.idade();
         this.bando = dp.bando();
@@ -47,5 +50,9 @@ public class Pirata {
         if (dadosPiratas.funcao() != null){
             this.funcao = dadosPiratas.funcao();
         }
+    }
+
+    public void remover() {
+        this.ativo = false;
     }
 }

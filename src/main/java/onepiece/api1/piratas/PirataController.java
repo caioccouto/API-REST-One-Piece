@@ -23,7 +23,7 @@ public class PirataController {
 
     @GetMapping
     public Page<DadosListagemPiratas> listar(@PageableDefault(sort = {"nome"}) Pageable pageable){
-        return repository.findAll(pageable).map(DadosListagemPiratas::new);
+        return repository.findAllByAtivoTrue(pageable).map(DadosListagemPiratas::new);
     }
 
     @PutMapping
@@ -31,5 +31,12 @@ public class PirataController {
     public void atualizar(@RequestBody @Valid DadosAtualizacaoPiratas dadosPiratas){
         Pirata pirata = repository.getReferenceById(dadosPiratas.id());
         pirata.atualizarDados(dadosPiratas);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void remover(@PathVariable Long id){
+        Pirata pirata = repository.getReferenceById(id);
+        pirata.remover();
     }
 }
