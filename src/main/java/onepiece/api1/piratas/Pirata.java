@@ -1,6 +1,7 @@
 package onepiece.api1.piratas;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -32,5 +33,19 @@ public class Pirata {
         this.idade = dp.idade();
         this.bando = dp.bando();
         this.funcao = dp.funcao();
+    }
+
+    public void atualizarDados(@Valid DadosAtualizacaoPiratas dadosPiratas) {
+        if (dadosPiratas.nome() != null){
+            this.nome = dadosPiratas.nome();
+        }
+
+        if (dadosPiratas.bando() != null){
+            this.bando = dadosPiratas.bando();
+        }
+
+        if (dadosPiratas.funcao() != null){
+            this.funcao = dadosPiratas.funcao();
+        }
     }
 }

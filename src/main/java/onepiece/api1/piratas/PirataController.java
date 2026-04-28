@@ -25,4 +25,11 @@ public class PirataController {
     public Page<DadosListagemPiratas> listar(@PageableDefault(sort = {"nome"}) Pageable pageable){
         return repository.findAll(pageable).map(DadosListagemPiratas::new);
     }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoPiratas dadosPiratas){
+        Pirata pirata = repository.getReferenceById(dadosPiratas.id());
+        pirata.atualizarDados(dadosPiratas);
+    }
 }
