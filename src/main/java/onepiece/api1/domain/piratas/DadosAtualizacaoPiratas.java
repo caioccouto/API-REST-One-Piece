@@ -1,6 +1,5 @@
-package onepiece.api1.piratas;
+package onepiece.api1.domain.piratas;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoPiratas(

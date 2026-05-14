@@ -1,4 +1,4 @@
-package onepiece.api1.piratas;
+package onepiece.api1.domain.piratas;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;

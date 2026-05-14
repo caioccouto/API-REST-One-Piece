@@ -1,4 +1,4 @@
-package onepiece.api1.piratas;
+package onepiece.api1.domain.piratas;
 
 public enum Bando {
     CHAPEUS_DE_PALHA,
